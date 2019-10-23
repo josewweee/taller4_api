@@ -1,3 +1,7 @@
+import importlib
+
+importlib.reload(sys.modules['azure'])
+
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from Mediciones import Medicion
