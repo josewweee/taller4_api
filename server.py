@@ -9,6 +9,13 @@ from Mediciones import Medicion
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/',methods=['GET'])
+def index():
+    return jsonify({
+        'api': '/mediciones'
+    })
+
+
 @app.route('/mediciones',methods=['GET'])
 def getAll():
     return (Medicion.list())
